@@ -1,0 +1,9 @@
+envs:
+  test-ocp:
+    path: test-ocp
+    projectset-templates: test-ocp/templates
+    projectset-crds: test-ocp/crds
+  prod-ocp:
+    path: prod-ocp
+    projectset-templates: common-templates
+    projectset-crds: prod-ocp/crds
