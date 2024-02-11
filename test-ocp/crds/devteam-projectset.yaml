@@ -11,7 +11,7 @@ metadata:
 spec:
   namespace: dev-app
   labels:
-    app: frontend
+    app: frontend2
     stage: dev
   annotations:
     app.kubernetes.io/name: dev-app
