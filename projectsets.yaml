@@ -1,9 +1,9 @@
 envs:
-  test-ocp:
+  test-ocp-cluster:
     path: test-ocp
     projectset-templates: test-ocp/templates
     projectset-crds: test-ocp/crds
-  prod-ocp:
+  prod-ocp-cluster:
     path: prod-ocp
     projectset-templates: common-templates
     projectset-crds: prod-ocp/crds
