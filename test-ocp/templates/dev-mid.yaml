@@ -28,6 +28,25 @@ spec:
           - pods/log
         verbs: ["*"]
 
+  limitRange:
+    limits:
+      - default:
+          cpu: 500m
+          memory: "50Mi"
+        defaultRequest:
+          cpu: 500m
+          memory: "50Mi"
+        max:
+          cpu: "1"
+          memory: "4Gi"
+        min:
+          cpu: 100m
+          memory: "50Mi"
+        type: Container
+
+
+
+
   groupPermissions:
     developer:
       - kind: "Group"
