@@ -16,7 +16,7 @@ spec:
   annotations:
     app.kubernetes.io/template: dev-mid
 
-  roleRules:
+  roles:
     developer:
       - apiGroups:
           - ""
@@ -28,7 +28,7 @@ spec:
           - pods/log
         verbs: ["*"]
 
-  groupPermissions:
+  roleBindings:
     developer:
       - kind: "Group"
         name: "developer"
