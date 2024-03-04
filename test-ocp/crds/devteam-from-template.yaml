@@ -7,7 +7,7 @@ metadata:
     app.kubernetes.io/part-of: projectset-operator
     app.kubernetes.io/managed-by: kustomize
     app.kubernetes.io/created-by: projectset-operator
-  name: devteam-from-teamplate
+  name: devteam-from-template
 spec:
   namespace: dev-app-template
   labels:
