@@ -4,9 +4,14 @@ The ProjectSet Operator CRD repo for projectset manifests
 
 ## Getting Started
 
+### Create structure dirs for crds and template and define it in config
+
+For empty dir use .gitignore file to commit empty dir
+
 ### Generate secret token for projectset operator to pull repo
 
-### Install and configure project-set operator
+### Install and configure projectset operator
+
 
 
 ## License
