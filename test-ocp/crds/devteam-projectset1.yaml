@@ -8,7 +8,7 @@ spec:
   namespace: dev-app
   labels:
     app: frontend
-    stage: dev2
+    stage: dev1
   annotations:
     app.kubernetes.io/name: dev-app
     app.kubernetes.io/lang: golang
