@@ -3,7 +3,7 @@ kind: ProjectSetTemplate
 metadata:
   labels:
     app.kubernetes.io/name: projectsettemplate
-    app.kubernetes.io/instance: dev-small
+    app.kubernetes.io/instance: dev-small2
     app.kubernetes.io/part-of: projectset-operator
     app.kubernetes.io/managed-by: kustomize
     app.kubernetes.io/created-by: projectset-operator
