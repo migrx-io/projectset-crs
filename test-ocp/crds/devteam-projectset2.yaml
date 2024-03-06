@@ -2,13 +2,13 @@ apiVersion: project.migrx.io/v1alpha1
 kind: ProjectSet
 metadata:
   annotations:
-    app.kubernetes.io/name: projectset4
-  name: devteam-projectset1
+    app.kubernetes.io/name: projectset3
+  name: devteam-projectset2
 spec:
   namespace: dev-app
   labels:
     app: frontend
-    stage: dev2
+    stage: dev
   annotations:
     app.kubernetes.io/name: dev-app
     app.kubernetes.io/lang: golang
