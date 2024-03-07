@@ -38,18 +38,17 @@ spec:
         type: Container
 
   roles:
-    developer:
-      - apiGroups:
-          - ""
-        resources:
-          - configmaps
-          - pods
-        verbs: ["*"]
     admin:
+      - apiGroups: [""]
+        resources: ["*"]
+        verbs: ["*"]
+
+    developer:
       - apiGroups:
           - ""
           - apps
         resources:
+          - pods
           - configmaps
           - deployments
           - events
@@ -88,5 +87,4 @@ spec:
       podSelector:
         matchLabels: {}
       policyTypes:
-        - Egress
-      
+        - Ingress
