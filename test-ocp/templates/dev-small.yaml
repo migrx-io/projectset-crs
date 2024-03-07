@@ -12,13 +12,13 @@ spec:
 
   annotations:
     app.kubernetes.io/template: dev-small
-    app.kubernetes.io/stage: dev
+    app.kubernetes.io/stage: dev2
 
   resourceQuota:
     hard:
       requests.cpu: "1"
       requests.memory: 1Gi
-      limits.cpu: "2"
+      limits.cpu: "4"
       limits.memory: 2Gi
 
   limitRange:
@@ -38,17 +38,18 @@ spec:
         type: Container
 
   roles:
-    admin:
-      - apiGroups: ["*"]
-        resources: ["*"]
-        verbs: ["*"]
-
     developer:
+      - apiGroups:
+          - ""
+        resources:
+          - configmaps
+          - pods
+        verbs: ["*"]
+    admin:
       - apiGroups:
           - ""
           - apps
         resources:
-          - pods
           - configmaps
           - deployments
           - events
@@ -87,4 +88,5 @@ spec:
       podSelector:
         matchLabels: {}
       policyTypes:
-        - Ingress
+        - Egress
+      
