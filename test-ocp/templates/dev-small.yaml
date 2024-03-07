@@ -39,7 +39,7 @@ spec:
 
   roles:
     admin:
-      - apiGroups: [""]
+      - apiGroups: ["*"]
         resources: ["*"]
         verbs: ["*"]
 
