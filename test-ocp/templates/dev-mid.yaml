@@ -1,0 +1,87 @@
+apiVersion: project.migrx.io/v1alpha1
+kind: ProjectSetTemplate
+metadata:
+  annotations:
+    app.kubernetes.io/name: projectsettemplate
+  name: dev-mid
+spec:
+  labels:
+    stage: dev
+  annotations:
+    app.kubernetes.io/name: dev-app
+  resourceQuota:
+    hard:
+      requests.cpu: "2"
+      requests.memory: 3Gi
+      limits.cpu: "8"
+      limits.memory: 10Gi
+
+  limitRange:
+    limits:
+      - default:
+          cpu: 500m
+          memory: "50Mi"
+        defaultRequest:
+          cpu: 500m
+          memory: "50Mi"
+        max:
+          cpu: "4"
+          memory: "8Gi"
+        min:
+          cpu: 100m
+          memory: "50Mi"
+        type: Container
+
+  roles:
+    developer:
+      - apiGroups:
+          - ""
+        resources:
+          - configmaps
+          - pods
+        verbs: ["*"]
+    admin:
+      - apiGroups:
+          - ""
+          - apps
+        resources:
+          - configmaps
+          - deployments
+          - events
+          - secrets
+          - serviceaccounts
+        verbs: ["*"]
+
+  roleBindings:
+    admin:
+      - kind: "Group"
+        name: "admin"
+    developer:
+      - kind: "Group"
+        name: "developer"
+
+  networkPolicy:
+    allow-dns:
+      podSelector:
+        matchLabels: {}
+      policyTypes:
+      - Egress
+      egress:
+      - to:
+        - namespaceSelector:
+            matchLabels:
+              name: kube-system
+        ports:
+        - protocol: UDP
+          port: 53
+    deny-egress:
+      podSelector:
+        matchLabels: {}
+      policyTypes:
+        - Egress
+    deny-ingress:
+      podSelector:
+        matchLabels: {}
+      policyTypes:
+        - Egress
+        
