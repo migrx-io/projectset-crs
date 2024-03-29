@@ -1,0 +1,15 @@
+apiVersion: project.migrx.io/v1alpha1
+kind: ProjectSet
+metadata:
+  name: app1
+  labels:
+    app.kubernetes.io/name: projectset
+    app.kubernetes.io/instance: projectset
+    app.kubernetes.io/part-of: projectset-operator
+    app.kubernetes.io/created-by: projectset-operator
+spec:
+  namespace: app1
+  labels:
+    projectset-version: v1
+    app: app1
+  template: dev-mid
