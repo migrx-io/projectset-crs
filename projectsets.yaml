@@ -1,7 +1,7 @@
 envs:
-  test-ocp-cluster:
-    projectset-templates: test-ocp/templates
-    projectset-crds: test-ocp/crds
-  prod-ocp-cluster:
+  dev-cluster:
+    projectset-templates: dev/templates
+    projectset-crs: dev/crds
+  prod-cluster:
     projectset-templates: common-templates
-    projectset-crds: prod-ocp/crds
+    projectset-crs: prod/crds
